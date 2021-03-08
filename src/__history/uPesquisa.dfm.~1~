@@ -1,0 +1,107 @@
+object FrmPesquisa: TFrmPesquisa
+  Left = 467
+  Top = 285
+  BorderStyle = bsSingle
+  Caption = 'Pesquisa'
+  ClientHeight = 301
+  ClientWidth = 590
+  Color = clBtnFace
+  Font.Charset = DEFAULT_CHARSET
+  Font.Color = clWindowText
+  Font.Height = -11
+  Font.Name = 'MS Sans Serif'
+  Font.Style = []
+  KeyPreview = True
+  OldCreateOrder = False
+  Position = poMainFormCenter
+  OnClose = FormClose
+  OnKeyDown = FormKeyDown
+  OnShow = FormShow
+  PixelsPerInch = 96
+  TextHeight = 13
+  object Panel1: TPanel
+    Left = 0
+    Top = 0
+    Width = 590
+    Height = 57
+    Align = alTop
+    TabOrder = 0
+    object Label1: TLabel
+      Left = 24
+      Top = 16
+      Width = 34
+      Height = 13
+      Caption = 'Nome :'
+    end
+    object edtNome: TEdit
+      Left = 64
+      Top = 11
+      Width = 257
+      Height = 21
+      TabOrder = 0
+      OnKeyPress = edtNomeKeyPress
+    end
+    object btnPesquisar: TButton
+      Left = 333
+      Top = 8
+      Width = 108
+      Height = 25
+      Caption = 'Pesquisar - F3'
+      TabOrder = 1
+      OnClick = btnPesquisarClick
+    end
+  end
+  object Panel2: TPanel
+    Left = 0
+    Top = 260
+    Width = 590
+    Height = 41
+    Align = alBottom
+    TabOrder = 1
+    object btnSelecionar: TButton
+      Left = 120
+      Top = 8
+      Width = 137
+      Height = 25
+      Caption = 'Selecionar - F5'
+      TabOrder = 0
+      OnClick = btnSelecionarClick
+    end
+    object btnCancelar: TButton
+      Left = 280
+      Top = 7
+      Width = 129
+      Height = 25
+      Caption = 'Cancelar <ESC>'
+      TabOrder = 1
+      OnClick = btnCancelarClick
+    end
+  end
+  object dbgPesquisa: TDBGrid
+    Left = 0
+    Top = 57
+    Width = 590
+    Height = 203
+    Align = alClient
+    DataSource = dsPesquisa
+    Options = [dgTitles, dgColumnResize, dgColLines, dgRowLines, dgTabs, dgConfirmDelete, dgCancelOnExit]
+    TabOrder = 2
+    TitleFont.Charset = DEFAULT_CHARSET
+    TitleFont.Color = clWindowText
+    TitleFont.Height = -11
+    TitleFont.Name = 'MS Sans Serif'
+    TitleFont.Style = []
+    OnDblClick = dbgPesquisaDblClick
+    OnKeyPress = dbgPesquisaKeyPress
+  end
+  object dsPesquisa: TDataSource
+    DataSet = QryPesquisa
+    Left = 352
+    Top = 104
+  end
+  object QryPesquisa: TFDQuery
+    Connection = DM.DBConexao
+    Left = 384
+    Top = 104
+  end
+end

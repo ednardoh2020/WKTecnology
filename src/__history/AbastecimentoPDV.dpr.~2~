@@ -1,0 +1,37 @@
+program AbastecimentoPDV;
+
+uses
+  Vcl.Forms,
+  UPrincipal in 'UPrincipal.pas' {frmPrincipal},
+  Vcl.Themes,
+  Vcl.Styles,
+  UDMPrincipal in 'UDMPrincipal.pas' {DM: TDataModule},
+  UConexaoBDpas in 'UConexaoBDpas.pas' {frmConectaDB},
+  UConecta in 'UConecta.pas',
+  UTanques in 'Classes\UTanques.pas',
+  UDMCad in 'UDMCad.pas' {DMCad: TDataModule},
+  uPesquisa in 'uPesquisa.pas' {FrmPesquisa},
+  UBombas in 'Classes\UBombas.pas',
+  UProdutos in 'Classes\UProdutos.pas',
+  UFpgto in 'Classes\UFpgto.pas',
+  UOperador in 'Classes\UOperador.pas',
+  UCaixa in 'Classes\UCaixa.pas',
+  UEmpresa in 'Classes\UEmpresa.pas',
+  UParametro in 'UParametro.pas' {frmParametro},
+  UVendasPDV in 'UVendasPDV.pas' {frmMov_Vendas},
+  uPesquisaProd in 'uPesquisaProd.pas' {frmPes_Produto},
+  uFormaPgto in 'uFormaPgto.pas' {frmForma_Pgto},
+  uRel_MovimetosDiario in 'uRel_MovimetosDiario.pas' {frmRel_Vendas};
+
+{$R *.res}
+
+begin
+  Application.Initialize;
+  Application.MainFormOnTaskbar := True;
+  Application.CreateForm(TDM, DM);
+  Application.CreateForm(TfrmPrincipal, frmPrincipal);
+  Application.CreateForm(TDMCad, DMCad);
+  Application.CreateForm(TFrmPesquisa, FrmPesquisa);
+  Application.CreateForm(TfrmRel_Vendas, frmRel_Vendas);
+  Application.Run;
+end.
